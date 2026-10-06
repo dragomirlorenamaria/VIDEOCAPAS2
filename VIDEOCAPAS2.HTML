@@ -1,0 +1,1573 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>La Tierra y sus capas - Vídeo introductorio</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html,body{
+    margin:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:#020617;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+#video{
+    width:100vw;
+    height:100vh;
+    position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 50% 45%,#172554 0%,#020617 65%);
+}
+
+/* =====================================================
+   ESTRELLAS
+===================================================== */
+
+.estrellas{
+    position:absolute;
+    inset:0;
+    background-image:
+        radial-gradient(circle at 8% 15%,white 0 1px,transparent 2px),
+        radial-gradient(circle at 20% 70%,white 0 1px,transparent 2px),
+        radial-gradient(circle at 32% 22%,white 0 1px,transparent 2px),
+        radial-gradient(circle at 48% 10%,white 0 1px,transparent 2px),
+        radial-gradient(circle at 63% 30%,white 0 1px,transparent 2px),
+        radial-gradient(circle at 78% 75%,white 0 1px,transparent 2px),
+        radial-gradient(circle at 91% 25%,white 0 1px,transparent 2px),
+        radial-gradient(circle at 85% 55%,white 0 1px,transparent 2px),
+        radial-gradient(circle at 12% 85%,white 0 1px,transparent 2px);
+    opacity:.75;
+}
+
+/* =====================================================
+   TIERRA
+===================================================== */
+
+.tierra{
+    position:absolute;
+    width:360px;
+    height:360px;
+    right:7%;
+    top:50%;
+    transform:translateY(-50%);
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle at 32% 28%,
+            #93c5fd 0 5%,
+            transparent 6%
+        ),
+        linear-gradient(
+            140deg,
+            #38bdf8,
+            #2563eb 55%,
+            #172554
+        );
+
+    box-shadow:
+        inset -45px -30px 60px #020617,
+        0 0 80px rgba(56,189,248,.45);
+
+    animation:
+        girarTierra 25s linear infinite,
+        respirarTierra 4s ease-in-out infinite;
+}
+
+@keyframes girarTierra{
+
+    from{
+        transform:translateY(-50%) rotate(0deg);
+    }
+
+    to{
+        transform:translateY(-50%) rotate(360deg);
+    }
+
+}
+
+@keyframes respirarTierra{
+
+    50%{
+        box-shadow:
+            inset -45px -30px 60px #020617,
+            0 0 110px rgba(56,189,248,.65);
+    }
+
+}
+
+/* Continentes */
+
+.continente1{
+    position:absolute;
+    width:42%;
+    height:27%;
+    left:13%;
+    top:25%;
+    background:#22c55e;
+    border-radius:55% 35% 60% 30%;
+    transform:rotate(-15deg);
+}
+
+.continente2{
+    position:absolute;
+    width:30%;
+    height:20%;
+    right:14%;
+    top:50%;
+    background:#16a34a;
+    border-radius:45% 60% 35% 55%;
+    transform:rotate(20deg);
+}
+
+.continente3{
+    position:absolute;
+    width:20%;
+    height:14%;
+    left:45%;
+    bottom:12%;
+    background:#15803d;
+    border-radius:60%;
+}
+
+/* =====================================================
+   CIENTÍFICO
+===================================================== */
+
+.cientifico{
+    position:absolute;
+    left:9%;
+    bottom:7%;
+    width:330px;
+    height:570px;
+
+    animation:
+        cientificoFlota 3s ease-in-out infinite;
+
+    z-index:10;
+}
+
+@keyframes cientificoFlota{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+}
+
+
+/* CABEZA */
+
+.cabeza{
+    position:absolute;
+    width:170px;
+    height:190px;
+
+    left:75px;
+    top:10px;
+
+    background:#f3c29f;
+
+    border-radius:
+        48%
+        48%
+        45%
+        45%;
+
+    border:5px solid #d89470;
+
+    z-index:5;
+}
+
+
+/* PELO */
+
+.pelo{
+    position:absolute;
+
+    width:175px;
+    height:85px;
+
+    left:-7px;
+    top:-22px;
+
+    background:#263244;
+
+    border-radius:
+        65%
+        65%
+        35%
+        30%;
+}
+
+
+/* OREJAS */
+
+.oreja{
+    position:absolute;
+    width:25px;
+    height:45px;
+
+    background:#e8ad88;
+
+    top:78px;
+
+    border-radius:50%;
+
+    z-index:-1;
+}
+
+.oreja.izquierda{
+    left:-17px;
+}
+
+.oreja.derecha{
+    right:-17px;
+}
+
+
+/* GAFAS */
+
+.gafas{
+    position:absolute;
+    top:72px;
+    left:20px;
+
+    width:55px;
+    height:43px;
+
+    border:4px solid #2563eb;
+    border-radius:12px;
+}
+
+.gafas.derecha{
+    left:auto;
+    right:20px;
+}
+
+.puente{
+    position:absolute;
+
+    left:72px;
+    top:88px;
+
+    width:30px;
+
+    border-top:4px solid #2563eb;
+}
+
+
+/* OJOS */
+
+.ojo{
+    position:absolute;
+
+    width:9px;
+    height:14px;
+
+    background:#111827;
+
+    border-radius:50%;
+
+    top:85px;
+
+    transform-origin:center;
+
+    animation:
+        parpadeo 4s infinite;
+}
+
+.ojo.izquierdo{
+    left:44px;
+}
+
+.ojo.derecho{
+    right:44px;
+}
+
+@keyframes parpadeo{
+
+    0%,45%,49%,100%{
+        transform:scaleY(1);
+    }
+
+    47%{
+        transform:scaleY(.08);
+    }
+
+}
+
+
+/* NARIZ */
+
+.nariz{
+    position:absolute;
+
+    width:18px;
+    height:25px;
+
+    left:76px;
+    top:103px;
+
+    border-right:3px solid #c27d60;
+    border-bottom:3px solid #c27d60;
+
+    border-radius:0 0 8px 0;
+}
+
+
+/* =====================================================
+   BOCA ANIMADA
+===================================================== */
+
+.boca{
+
+    position:absolute;
+
+    left:50%;
+    transform:translateX(-50%);
+
+    top:140px;
+
+    width:52px;
+    height:24px;
+
+    border-radius:50%;
+
+    background:#8b3b45;
+
+    border:3px solid #6b2737;
+
+    overflow:hidden;
+
+}
+
+
+/*
+    Cuando el personaje está hablando,
+    la boca cambia entre estas posiciones.
+*/
+
+.boca.hablando{
+    animation:
+        hablarBoca .18s infinite alternate;
+}
+
+
+@keyframes hablarBoca{
+
+    0%{
+
+        height:8px;
+        width:40px;
+
+        border-radius:50%;
+
+    }
+
+    100%{
+
+        height:30px;
+        width:50px;
+
+        border-radius:45%;
+
+    }
+
+}
+
+
+/* LENGUA */
+
+.lengua{
+
+    position:absolute;
+
+    bottom:-4px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:30px;
+    height:12px;
+
+    background:#ef7180;
+
+    border-radius:50%;
+
+}
+
+
+/* =====================================================
+   CUERPO
+===================================================== */
+
+.cuerpo{
+
+    position:absolute;
+
+    left:50px;
+    top:185px;
+
+    width:230px;
+    height:300px;
+
+    background:white;
+
+    border:6px solid #bae6fd;
+
+    border-radius:
+        50px
+        50px
+        25px
+        25px;
+
+}
+
+
+/* CUELLO */
+
+.cuello{
+
+    position:absolute;
+
+    left:135px;
+    top:170px;
+
+    width:50px;
+    height:45px;
+
+    background:#eab08b;
+
+}
+
+
+/* BRAZOS */
+
+.brazo{
+
+    position:absolute;
+
+    width:100px;
+    height:38px;
+
+    background:white;
+
+    border:6px solid #bae6fd;
+
+    border-radius:40px;
+
+    top:260px;
+
+}
+
+.brazo.izquierdo{
+
+    left:-20px;
+
+    transform:rotate(-20deg);
+
+}
+
+.brazo.derecho{
+
+    right:-20px;
+
+    transform:rotate(20deg);
+
+}
+
+
+/* MANOS */
+
+.mano{
+
+    position:absolute;
+
+    width:42px;
+    height:42px;
+
+    background:#f3c29f;
+
+    border-radius:50%;
+
+    top:250px;
+
+}
+
+.mano.izquierda{
+    left:-48px;
+}
+
+.mano.derecha{
+    right:-48px;
+}
+
+
+/* INSIGNIA */
+
+.insignia{
+
+    position:absolute;
+
+    top:230px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    background:#0ea5e9;
+
+    border:4px solid #075985;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:24px;
+
+}
+
+
+/* =====================================================
+   BURBUJA DE TEXTO
+===================================================== */
+
+.bocadillo{
+
+    position:absolute;
+
+    left:38%;
+    top:10%;
+
+    width:48%;
+
+    background:white;
+    color:#0f172a;
+
+    padding:35px 40px;
+
+    border-radius:35px;
+
+    box-shadow:
+        0 20px 70px rgba(0,0,0,.45);
+
+    z-index:20;
+
+    font-size:clamp(18px,2vw,28px);
+
+    line-height:1.5;
+
+    font-weight:700;
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+    transition:.6s;
+
+}
+
+
+.bocadillo.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+/* Pico del bocadillo */
+
+.bocadillo:after{
+
+    content:"";
+
+    position:absolute;
+
+    left:-25px;
+    top:55%;
+
+    width:45px;
+    height:45px;
+
+    background:white;
+
+    transform:rotate(45deg);
+
+}
+
+
+/* =====================================================
+   TITULO
+===================================================== */
+
+.titulo{
+
+    position:absolute;
+
+    top:5%;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    text-align:center;
+
+    z-index:15;
+
+}
+
+.titulo pequeño{
+    font-size:14px;
+}
+
+.titulo h1{
+
+    font-size:clamp(25px,4vw,50px);
+
+    font-weight:900;
+
+    margin:5px;
+
+}
+
+.titulo p{
+
+    color:#7dd3fc;
+
+    font-weight:bold;
+
+}
+
+
+/* =====================================================
+   BOTON INICIO
+===================================================== */
+
+#inicio{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:100;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(30,64,175,.8),
+            rgba(2,6,23,.98)
+        );
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+}
+
+#inicio.oculto{
+    display:none;
+}
+
+.botonInicio{
+
+    background:#facc15;
+
+    color:#172033;
+
+    border:none;
+
+    padding:20px 35px;
+
+    font-size:22px;
+
+    font-weight:900;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 0 40px rgba(250,204,21,.35);
+
+    transition:.2s;
+
+}
+
+.botonInicio:hover{
+
+    transform:scale(1.05);
+
+    background:#fde047;
+
+}
+
+
+/* =====================================================
+   SUBTÍTULOS
+===================================================== */
+
+.subtitulo{
+
+    position:absolute;
+
+    bottom:4%;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:30;
+
+    color:#e0f2fe;
+
+    background:rgba(2,6,23,.75);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(8px);
+
+    padding:10px 20px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    width:min(90%,900px);
+
+    font-size:16px;
+
+}
+
+
+/* =====================================================
+   FINAL
+===================================================== */
+
+.final{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:50;
+
+    background:
+        radial-gradient(
+            circle,
+            #172554,
+            #020617 70%
+        );
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:1s;
+
+}
+
+.final.visible{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
+
+.final h2{
+
+    font-size:clamp(40px,7vw,90px);
+
+    font-weight:900;
+
+    color:#fde047;
+
+}
+
+.final p{
+
+    font-size:clamp(20px,3vw,32px);
+
+    max-width:800px;
+
+    margin:auto;
+
+}
+
+.cohete{
+
+    font-size:100px;
+
+    animation:
+        subirCohete 2s ease-in-out infinite;
+
+}
+
+@keyframes subirCohete{
+
+    50%{
+        transform:translateY(-20px);
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div id="video">
+
+    <div class="estrellas"></div>
+
+
+    <!-- ===============================================
+         TITULO
+    ================================================ -->
+
+    <div class="titulo">
+
+        <p>
+            🔬 MISIÓN CIENTÍFICA · 4º PRIMARIA
+        </p>
+
+        <h1>
+            LA TIERRA Y SUS CAPAS
+        </h1>
+
+    </div>
+
+
+    <!-- ===============================================
+         TIERRA
+    ================================================ -->
+
+    <div class="tierra">
+
+        <div class="continente1"></div>
+
+        <div class="continente2"></div>
+
+        <div class="continente3"></div>
+
+    </div>
+
+
+    <!-- ===============================================
+         CIENTÍFICO
+    ================================================ -->
+
+    <div class="cientifico">
+
+        <div class="cuello"></div>
+
+
+        <div class="cabeza">
+
+            <div class="pelo"></div>
+
+            <div class="oreja izquierda"></div>
+            <div class="oreja derecha"></div>
+
+
+            <div class="gafas"></div>
+
+            <div class="gafas derecha"></div>
+
+            <div class="puente"></div>
+
+
+            <div class="ojo izquierdo"></div>
+
+            <div class="ojo derecho"></div>
+
+
+            <div class="nariz"></div>
+
+
+            <!-- BOCA -->
+
+            <div id="boca"
+                 class="boca">
+
+                <div class="lengua"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="cuerpo"></div>
+
+
+        <div class="brazo izquierdo"></div>
+
+        <div class="brazo derecho"></div>
+
+
+        <div class="mano izquierda"></div>
+
+        <div class="mano derecha"></div>
+
+
+        <div class="insignia">
+            🔬
+        </div>
+
+    </div>
+
+
+    <!-- ===============================================
+         BOCADILLO
+    ================================================ -->
+
+    <div id="bocadillo"
+         class="bocadillo">
+
+        <span id="texto"></span>
+
+    </div>
+
+
+    <!-- ===============================================
+         SUBTÍTULOS
+    ================================================ -->
+
+    <div id="subtitulo"
+         class="subtitulo">
+
+        Preparando la misión científica...
+
+    </div>
+
+
+    <!-- ===============================================
+         PANTALLA INICIAL
+    ================================================ -->
+
+    <div id="inicio">
+
+        <div>
+
+            <div style="font-size:90px">
+                🔬🌍
+            </div>
+
+            <h1 class="text-4xl md:text-6xl font-black mb-4">
+                MISIÓN TIERRA
+            </h1>
+
+            <p class="text-slate-300 text-lg mb-8">
+                La Tierra y sus capas
+            </p>
+
+            <button id="comenzar"
+                    class="botonInicio">
+
+                ▶ COMENZAR VÍDEO
+
+            </button>
+
+            <p class="text-slate-400 text-sm mt-5">
+                🔊 Activa el sonido para escuchar al científico
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ===============================================
+         FINAL
+    ================================================ -->
+
+    <div id="final"
+         class="final">
+
+        <div>
+
+            <div class="cohete">
+                🚀
+            </div>
+
+            <h2>
+                ¿ACEPTÁIS LA MISIÓN?
+            </h2>
+
+            <p class="text-sky-200 mt-6">
+
+                Necesitamos un equipo de
+                jóvenes científicos.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   TEXTO DEL CIENTÍFICO
+===================================================== */
+
+const discurso = [
+
+"Tenemos un problema: los científicos han perdido la información sobre el interior de nuestro planeta.",
+
+"Sabemos que vivimos sobre la Tierra, pero… ¿qué hay debajo de nuestros pies?",
+
+"Necesitamos un equipo de jóvenes científicos que investigue el interior de nuestro planeta y reconstruya un modelo de la Tierra.",
+
+"¿Aceptáis la misión?"
+
+];
+
+
+/* =====================================================
+   ELEMENTOS
+===================================================== */
+
+const boca =
+    document.getElementById("boca");
+
+const texto =
+    document.getElementById("texto");
+
+const bocadillo =
+    document.getElementById("bocadillo");
+
+const subtitulo =
+    document.getElementById("subtitulo");
+
+const inicio =
+    document.getElementById("inicio");
+
+const final =
+    document.getElementById("final");
+
+
+let audioActivado = true;
+
+
+/* =====================================================
+   VOZ
+===================================================== */
+
+function hablar(textoActual){
+
+    return new Promise(resolve => {
+
+        if(
+            !audioActivado ||
+            !("speechSynthesis" in window)
+        ){
+
+            resolve();
+
+            return;
+
+        }
+
+
+        speechSynthesis.cancel();
+
+
+        const voz =
+            new SpeechSynthesisUtterance(
+                textoActual
+            );
+
+
+        voz.lang = "es-ES";
+
+        voz.rate = 0.88;
+
+        voz.pitch = 1.05;
+
+        voz.volume = 1;
+
+
+        /*
+          Activamos la animación de la boca
+          mientras el navegador habla.
+        */
+
+        boca.classList.add("hablando");
+
+
+        voz.onstart = () => {
+
+            boca.classList.add(
+                "hablando"
+            );
+
+        };
+
+
+        voz.onend = () => {
+
+            boca.classList.remove(
+                "hablando"
+            );
+
+            resolve();
+
+        };
+
+
+        voz.onerror = () => {
+
+            boca.classList.remove(
+                "hablando"
+            );
+
+            resolve();
+
+        };
+
+
+        speechSynthesis.speak(voz);
+
+    });
+
+}
+
+
+/* =====================================================
+   EFECTOS DE SONIDO
+===================================================== */
+
+function tono(frecuencia,duracion){
+
+    try{
+
+        const AudioContext =
+            window.AudioContext ||
+            window.webkitAudioContext;
+
+        const contexto =
+            new AudioContext();
+
+        const oscilador =
+            contexto.createOscillator();
+
+        const ganancia =
+            contexto.createGain();
+
+
+        oscilador.frequency.value =
+            frecuencia;
+
+        oscilador.type =
+            "sine";
+
+
+        ganancia.gain.setValueAtTime(
+            0.001,
+            contexto.currentTime
+        );
+
+
+        ganancia.gain.exponentialRampToValueAtTime(
+            0.08,
+            contexto.currentTime + .03
+        );
+
+
+        ganancia.gain.exponentialRampToValueAtTime(
+            0.001,
+            contexto.currentTime + duracion
+        );
+
+
+        oscilador.connect(ganancia);
+
+        ganancia.connect(
+            contexto.destination
+        );
+
+
+        oscilador.start();
+
+        oscilador.stop(
+            contexto.currentTime + duracion
+        );
+
+    }
+    catch(e){}
+
+}
+
+
+/* =====================================================
+   MÚSICA AMBIENTAL
+===================================================== */
+
+let musicaContexto;
+
+function iniciarMusica(){
+
+    try{
+
+        musicaContexto =
+            new (
+                window.AudioContext ||
+                window.webkitAudioContext
+            )();
+
+
+        const notas =
+            [130.81,164.81,196,246.94];
+
+
+        notas.forEach((frecuencia,indice)=>{
+
+            const osc =
+                musicaContexto.createOscillator();
+
+            const gain =
+                musicaContexto.createGain();
+
+
+            osc.type="sine";
+
+            osc.frequency.value =
+                frecuencia;
+
+
+            gain.gain.value =
+                0.018;
+
+
+            osc.connect(gain);
+
+            gain.connect(
+                musicaContexto.destination
+            );
+
+
+            osc.start();
+
+        });
+
+    }
+    catch(e){}
+
+}
+
+
+/* =====================================================
+   TEXTO ESCRITO
+===================================================== */
+
+async function mostrarTexto(textoActual){
+
+    texto.textContent = "";
+
+    bocadillo.classList.add("visible");
+
+
+    /*
+      El texto aparece progresivamente
+      para darle aspecto de vídeo narrado.
+    */
+
+    for(
+        let i=0;
+        i<textoActual.length;
+        i++
+    ){
+
+        texto.textContent +=
+            textoActual[i];
+
+        await esperar(8);
+
+    }
+
+}
+
+
+/* =====================================================
+   ESPERA
+===================================================== */
+
+function esperar(ms){
+
+    return new Promise(
+        resolver =>
+        setTimeout(resolver,ms)
+    );
+
+}
+
+
+/* =====================================================
+   ESCENA
+===================================================== */
+
+async function reproducirVideo(){
+
+    iniciarMusica();
+
+    await esperar(700);
+
+
+    for(
+        let i=0;
+        i<discurso.length;
+        i++
+    ){
+
+        const frase =
+            discurso[i];
+
+
+        subtitulo.textContent =
+            frase;
+
+
+        await mostrarTexto(frase);
+
+
+        await hablar(frase);
+
+
+        /*
+          Pequeña pausa cinematográfica
+        */
+
+        await esperar(1000);
+
+
+        /*
+          Si es la última frase,
+          hacemos una transición especial.
+        */
+
+        if(i === discurso.length-1){
+
+            await esperar(800);
+
+            finalizar();
+
+            return;
+
+        }
+
+
+        bocadillo.classList.remove(
+            "visible"
+        );
+
+
+        await esperar(500);
+
+    }
+
+}
+
+
+/* =====================================================
+   FINAL
+===================================================== */
+
+function finalizar(){
+
+    boca.classList.remove(
+        "hablando"
+    );
+
+
+    subtitulo.textContent =
+        "La misión está en vuestras manos...";
+
+
+    final.classList.add(
+        "visible"
+    );
+
+
+    lanzarConfeti();
+
+    tono(523,.2);
+
+    setTimeout(
+        ()=>tono(659,.2),
+        180
+    );
+
+    setTimeout(
+        ()=>tono(784,.3),
+        360
+    );
+
+}
+
+
+/* =====================================================
+   CONFETI FINAL
+===================================================== */
+
+function lanzarConfeti(){
+
+    const simbolos =
+        ["⭐","✨","🌟","🚀","🔬"];
+
+
+    for(
+        let i=0;
+        i<50;
+        i++
+    ){
+
+        const elemento =
+            document.createElement("div");
+
+
+        elemento.style.position =
+            "fixed";
+
+        elemento.style.zIndex =
+            "200";
+
+
+        elemento.style.left =
+            Math.random()*100+"vw";
+
+        elemento.style.top =
+            "-30px";
+
+
+        elemento.style.fontSize =
+            20+
+            Math.random()*20+
+            "px";
+
+
+        elemento.textContent =
+            simbolos[
+                Math.floor(
+                    Math.random()*
+                    simbolos.length
+                )
+            ];
+
+
+        document.body.appendChild(
+            elemento
+        );
+
+
+        const duracion =
+            2500+
+            Math.random()*2000;
+
+
+        elemento.animate(
+
+            [
+
+                {
+                    transform:
+                    "translateY(0) rotate(0deg)"
+                },
+
+                {
+
+                    transform:
+                    `translateY(110vh)
+                     rotate(${Math.random()*720}deg)`
+
+                }
+
+            ],
+
+            {
+
+                duration:
+                    duracion,
+
+                easing:
+                    "ease-in"
+
+            }
+
+        );
+
+
+        setTimeout(
+            ()=>elemento.remove(),
+            duracion
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   COMENZAR
+===================================================== */
+
+document
+.getElementById("comenzar")
+.addEventListener(
+    "click",
+    async ()=>{
+
+        inicio.classList.add(
+            "oculto"
+        );
+
+        await reproducirVideo();
+
+    }
+);
+
+</script>
+
+</body>
+</html>
